@@ -1,0 +1,158 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #FFFFFF;
+  background-color: #003366;
+}
+
+/* Home container */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.banner h1 {
+  font-size: 3.5rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner p {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #003366;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #FFCC00;
+  color: #003366;
+}
+
+/* Liquid gradient background */
+.liquid-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #003366, #FFCC00, #003366);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  z-index: 1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Content sections */
+.content-section {
+  margin-top: 4rem;
+}
+
+.content-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+/* Navigation bar */
+.nav-bar {
+  background-color: #003366;
+  padding: 1rem 0;
+}
+
+.nav-bar a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: #FFCC00;
+}
+
+.nav-bar a.active {
+  color: #FFCC00;
+  border-bottom: 2px solid #FFCC00;
+}
+
+/* Logo */
+.logo {
+  color: #FFCC00;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .banner {
+    height: 400px;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .content-section h2 {
+    font-size: 2rem;
+  }
+}
