@@ -1,19 +1,32 @@
 package main
 
 import (
-    "log"
-    "net/http"
-    "github.com/beez1/carsite/backend/config"
-    "github.com/beez1/carsite/backend/routes"
+	"log"
+
+	"github.com/jmoiron/sqlx"
+	_ "github.com/lib/pq" // PostgreSQL driver
 )
 
+type User struct {
+	Name  string `db:"username"`
+	Email string `db:"email"`
+}
+
 func main() {
-    // Connect to the database
-    config.ConnectDatabase()
+	// Connection string
+	dsn := "user=beez password=carsitetest1234 dbname=carsite host=35.246.1.155 port=5432 sslmode=disable"
 
-    // Initialize routes
-    router := routes.InitializeRoutes()
+	// Connect to the PostgreSQL database
+	db, err := sqlx.Connect("postgres", dsn)
+	if err != nil {
+		log.Fatalln("Error connecting to the database:", err)
+	}
+	defer db.Close()
 
-    // Start the server on port 8080
-    log.Fatal(http.ListenAndServe(":8080", router))
+	// Test the connection
+	if err := db.Ping(); err != nil {
+		log.Fatal("Error pinging the database:", err)
+	} else {
+		log.Println("Successfully connected to the database")
+	}
 }

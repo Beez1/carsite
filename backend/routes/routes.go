@@ -1,16 +1,15 @@
 package routes
 
 import (
-    "github.com/gorilla/mux"
-    "/backend/controllersd"
+	"github.com/gorilla/mux"
+	"carsite-backend/controllers"
 )
 
 func InitializeRoutes() *mux.Router {
-    router := mux.NewRouter()
+	router := mux.NewRouter()
 
-    // Define routes for the cars API
-    router.HandleFunc("/cars", controllers.GetCars).Methods("GET")
-    router.HandleFunc("/cars/{id}", controllers.GetCar).Methods("GET")
+	// Define routes for cars
+	router.HandleFunc("/cars", controllers.GetCars).Methods("GET")
 
-    return router
+	return router
 }
