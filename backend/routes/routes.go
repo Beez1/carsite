@@ -2,7 +2,7 @@ package routes
 
 import (
     "github.com/gorilla/mux"
-    "/backend/controllers"
+    "/backend/controllersd"
 )
 
 func InitializeRoutes() *mux.Router {
