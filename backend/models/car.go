@@ -6,7 +6,7 @@ import "gorm.io/gorm"
 type Car struct {
 	gorm.Model
 	Make        string  `json:"make"`
-	CarModel       string  `json:"carmodel"`
+	CarModel    string  `json:"carmodel"`
 	Year        int     `json:"year"`
 	Price       float64 `json:"price"`
 	Mileage     int     `json:"mileage"`
