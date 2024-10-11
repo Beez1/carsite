@@ -1,10 +1,7 @@
 package models
 
-import "gorm.io/gorm"
-
 // Car represents a car entity
 type Car struct {
-	gorm.Model
 	Make        string  `json:"make"`
 	CarModel    string  `json:"carmodel"`
 	Year        int     `json:"year"`
@@ -13,3 +10,4 @@ type Car struct {
 	Description string  `json:"description"`
 	ImageURL    string  `json:"image_url"`
 }
+
