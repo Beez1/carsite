@@ -1,6 +1,6 @@
 package models
 
-// Car represents a car entity
+
 type Car struct {
 	Make        string  `json:"make"`
 	CarModel    string  `json:"carmodel"`

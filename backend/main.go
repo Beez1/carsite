@@ -52,6 +52,12 @@ func main() {
 
 	// Define HTTP routes
 	http.HandleFunc("/cars", func(w http.ResponseWriter, r *http.Request) {
+		enableCORS(&w) // Enable CORS
+
+		if r.Method == http.MethodOptions {
+			return // Handle CORS preflight request
+		}
+
 		if r.Method == http.MethodPost {
 			InsertCar(w, r)  // Handle POST request to insert car
 		} else if r.Method == http.MethodGet {
@@ -64,6 +70,13 @@ func main() {
 	// Start the HTTP server using the PORT from environment variables
 	fmt.Printf("Server is running on port %s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
+}
+
+// EnableCORS adds the necessary CORS headers to the HTTP response
+func enableCORS(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*") // Allows all origins
+	(*w).Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+	(*w).Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 }
 
 // InsertCar handles the request to insert a new car into MongoDB

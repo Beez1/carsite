@@ -38,7 +38,17 @@
 <div class="featured-cars">
   <h2>Featured Cars</h2>
   <div class="car-list">
-    <!-- Placeholder for featured cars -->
-    <!-- This section will be populated dynamically by the backend -->
+  
+      <div *ngFor="let car of cars" class="car-item">
+        <img [src]="car.image_url" [alt]="car.make + ' ' + car.carmodel">
+        <h3>{{ car.make }} {{ car.carmodel }}</h3>
+        <p>Year: {{ car.year }}</p>
+        <p>Price: ${{ car.price }}</p>
+        <p>Mileage: {{ car.mileage }} miles</p>
+        <p>{{ car.description }}</p>
+      </div>
+    
+  
   </div>
 </div>
+<app-footer></app-footer>

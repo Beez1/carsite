@@ -1,14 +1,20 @@
 <app-nav></app-nav>
-<div id="cover">
-  <form method="get" action="">
-    <div class="tb">
-      <div class="td"><input type="text" placeholder="Search" required></div>
-      <div class="td" id="s-cover">
-        <button type="submit">
-          <div id="s-circle"></div>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </form>
+
+<div class="search-container">
+  <input type="text" placeholder="Search..." class="search-bar">
+  <button class="search-icon">
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
 </div>
+<div class="car-list">
+  <div *ngFor="let car of cars" class="car-item">
+    <img [src]="car.image_url" [alt]="car.make + ' ' + car.carmodel">
+    <h2>{{ car.make }} {{ car.carmodel }}</h2>
+    <p>Year: {{ car.year }}</p>
+    <p>Price: ${{ car.price }}</p>
+    <p>Mileage: {{ car.mileage }} miles</p>
+    <p>{{ car.description }}</p>
+  </div>
+</div>
+
+<app-footer></app-footer>
