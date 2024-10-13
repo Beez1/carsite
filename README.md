@@ -39,54 +39,38 @@ Installation and Running the Service
 1. Clone the Repository
 -----------------------
 
-git clone https://github.com/your-username/carsite.git
+git clone 
 cd carsite
-
 
 2. Backend Setup
 ----------------
 Configure Environment Variables:
 
-Create a .env file in the backend directory with the following content:
-
-
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/carsite
-PORT=8080
-
+Create a .env file in the backend directory.
 
 Install Backend Dependencies:
-
 
 cd backend
 go mod tidy
 
-
 Run the Backend:
 
-
 go run main.go
-
 
 3. Frontend Setup
 -----------------
 Navigate to the Frontend Directory:
 
-
 cd src
 
-
 Install Frontend Dependencies:
-
 
 npm install
 npm install @angular/cli
 
-
 Run the Frontend:
 
-
 ng serve
-
 
 Access the Application
 ----------------------
