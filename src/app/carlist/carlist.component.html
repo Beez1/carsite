@@ -1,10 +1,8 @@
 <app-nav></app-nav>
 
 <div class="search-container">
-  <input type="text" placeholder="Search..." class="search-bar">
-  <button class="search-icon">
-    <i class="fa-solid fa-arrow-right"></i>
-  </button>
+  <input type="text" placeholder="Search cars..." class="search-bar">
+  <button class="search-button">Search</button>
 </div>
 <div class="car-list">
   <div *ngFor="let car of cars" class="car-item">
@@ -16,5 +14,13 @@
     <p>{{ car.description }}</p>
   </div>
 </div>
+<!-- <pagination-controls>
+(pageChange)="onPageChange($event)" 
+[totalItems]="totalItems" 
+[itemsPerPage]="itemsPerPage"
+[maxSize]="5"
+[directionLinks]="true"
+[autoHide]="true">
+</pagination-controls> -->
 
 <app-footer></app-footer>
